@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return """
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +27,14 @@ body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#04142d,#071b44,#13083f);
     color:white;
+    min-height:100vh;
 }
 
-/* Navbar */
+/* Top Bar */
 
 .navbar{
     background:#02122d;
-    padding:18px 40px;
+    padding:12px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -41,129 +42,130 @@ body{
 }
 
 .nav-title{
-    font-size:24px;
-    font-weight:600;
+    font-size:20px;
     color:#ffbf00;
+    font-weight:600;
 }
 
 .status{
     background:#0d8b2c;
-    padding:10px 20px;
-    border-radius:25px;
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:13px;
     font-weight:bold;
 }
 
-/* Hero Section */
+/* Hero */
 
 .hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:70px;
-    min-height:500px;
+    text-align:center;
+    padding:20px 20px 10px;
 }
 
-.hero-left{
-    width:55%;
-}
-
-.hero-left h1{
-    font-size:60px;
+.hero img{
+    width:120px;
+    border-radius:15px;
     margin-bottom:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.hero-left h2{
+.hero h1{
+    font-size:34px;
+    margin-bottom:5px;
+}
+
+.hero h2{
     font-family:'Pacifico',cursive;
-    font-size:90px;
+    font-size:58px;
     color:white;
+    margin-bottom:5px;
+}
+
+.hero h3{
+    color:#ffbf00;
+    font-size:28px;
     margin-bottom:10px;
 }
 
-.hero-left h3{
-    font-size:50px;
-    color:#ffbf00;
-    margin-bottom:20px;
+.hero p{
+    font-size:15px;
+    color:#d8d8d8;
+    line-height:1.6;
 }
 
-.hero-left p{
-    font-size:22px;
-    color:#d6d6d6;
-    line-height:1.8;
-}
+/* Buttons */
 
 .btn{
-    margin-top:30px;
     display:inline-block;
     background:#1e90ff;
     color:white;
     text-decoration:none;
-    padding:15px 30px;
+    padding:10px 18px;
     border-radius:8px;
-    margin-right:15px;
-    transition:0.3s;
+    margin:15px 5px;
+    font-size:14px;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-/* Helmet */
-
-.hero-right{
-    width:40%;
-    text-align:center;
-}
-
-.hero-right img{
-    width:350px;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
-
-/* Tools Section */
+/* Tools */
 
 .tools{
-    padding:50px 70px;
+    padding:15px 30px;
 }
 
 .tools h2{
     text-align:center;
-    margin-bottom:40px;
-    font-size:40px;
+    margin-bottom:15px;
+    font-size:26px;
 }
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
 .card{
     background:white;
     color:black;
     text-align:center;
-    padding:25px;
-    border-radius:15px;
+    padding:12px;
+    border-radius:10px;
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-3px);
 }
 
 .card img{
-    height:80px;
-    margin-bottom:15px;
+    height:45px;
+    margin-bottom:8px;
+}
+
+.card h3{
+    font-size:14px;
 }
 
 /* Footer */
 
 .footer{
-    margin-top:50px;
+    margin-top:15px;
     background:#02122d;
-    padding:25px;
+    padding:12px;
     text-align:center;
-    font-size:18px;
+    font-size:13px;
+}
+
+@media(max-width:900px){
+
+.grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.hero h2{
+    font-size:42px;
+}
+
 }
 
 </style>
@@ -185,32 +187,22 @@ body{
 
 <section class="hero">
 
-    <div class="hero-left">
+    <img src="/static/spartan-helmet.png" alt="Spartan Helmet">
 
-        <h1>Welcome To</h1>
+    <h1>Welcome To</h1>
 
-        <h2>Suresh</h2>
+    <h2>Suresh</h2>
 
-        <h3>World Of Tools</h3>
+    <h3>World Of Tools</h3>
 
-        <p>
-            Cloud • DevOps • Automation • CI/CD
-            <br><br>
-            AWS • Azure • Docker • Kubernetes
-            <br>
-            Jenkins • GitHub • Terraform
-        </p>
+    <p>
+        Cloud • DevOps • Automation • CI/CD
+        <br>
+        AWS • Azure • Docker • Kubernetes • Jenkins • GitHub • Terraform
+    </p>
 
-        <a href="#" class="btn">Explore Tools</a>
-        <a href="#" class="btn">View Projects</a>
-
-    </div>
-
-    <div class="hero-right">
-
-        <img src="/static/spartan-helmet.png" alt="Spartan Helmet">
-
-    </div>
+    <a href="#" class="btn">Explore Tools</a>
+    <a href="#" class="btn">View Projects</a>
 
 </section>
 
@@ -255,12 +247,17 @@ body{
             <h3>Terraform</h3>
         </div>
 
+        <div class="card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+            <h3>Linux</h3>
+        </div>
+
     </div>
 
 </section>
 
 <div class="footer">
-    © 2026 Suresh World Of Tools | Built with Flask, Docker & Jenkins
+    © 2026 Suresh World Of Tools | Flask • Docker • Jenkins • DevOps
 </div>
 
 </body>
