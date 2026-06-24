@@ -11,11 +11,12 @@ def home():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Suresh World of Tools</title>
+<title>Suresh World Of Tools</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -29,6 +30,7 @@ body{
 }
 
 /* Navbar */
+
 .navbar{
     background:#02122d;
     padding:18px 40px;
@@ -38,15 +40,10 @@ body{
     border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.logo{
-    font-size:34px;
+.nav-title{
+    font-size:24px;
+    font-weight:600;
     color:#ffbf00;
-}
-
-.logo span{
-    font-family:'Pacifico',cursive;
-    color:white;
-    font-size:42px;
 }
 
 .status{
@@ -56,37 +53,42 @@ body{
     font-weight:bold;
 }
 
-/* Hero */
+/* Hero Section */
+
 .hero{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:70px;
+    min-height:500px;
 }
 
 .hero-left{
-    width:50%;
+    width:55%;
 }
 
 .hero-left h1{
-    font-size:70px;
-    line-height:1.1;
-}
-
-.hero-left h1 span{
-    font-family:'Pacifico',cursive;
-    color:#ffffff;
+    font-size:60px;
+    margin-bottom:10px;
 }
 
 .hero-left h2{
+    font-family:'Pacifico',cursive;
+    font-size:90px;
+    color:white;
+    margin-bottom:10px;
+}
+
+.hero-left h3{
+    font-size:50px;
     color:#ffbf00;
-    font-size:60px;
+    margin-bottom:20px;
 }
 
 .hero-left p{
-    margin-top:20px;
-    font-size:20px;
+    font-size:22px;
     color:#d6d6d6;
+    line-height:1.8;
 }
 
 .btn{
@@ -98,78 +100,116 @@ body{
     padding:15px 30px;
     border-radius:8px;
     margin-right:15px;
+    transition:0.3s;
 }
 
-/* Logo Grid */
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Helmet */
+
+.hero-right{
+    width:40%;
+    text-align:center;
+}
+
+.hero-right img{
+    width:350px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Tools Section */
+
 .tools{
-    padding:40px 70px;
+    padding:50px 70px;
 }
 
 .tools h2{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:40px;
+    font-size:40px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
+    gap:25px;
 }
 
 .card{
     background:white;
     color:black;
     text-align:center;
-    padding:20px;
-    border-radius:12px;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card img{
     height:80px;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
 /* Footer */
+
 .footer{
     margin-top:50px;
     background:#02122d;
     padding:25px;
     text-align:center;
+    font-size:18px;
 }
+
 </style>
 </head>
 
 <body>
 
 <nav class="navbar">
-    <div class="logo">
-        <span>Suresh</span> World Of Tools
+
+    <div class="nav-title">
+        DevOps Portfolio
     </div>
 
     <div class="status">
-        ✅ DEPLOYED SUCCESSFULLY
+        🚀 DEPLOYED SUCCESSFULLY
     </div>
+
 </nav>
 
 <section class="hero">
 
     <div class="hero-left">
-        <h1>Welcome to</h1>
-        <h2><span>Suresh</span><br>World Of Tools</h2>
+
+        <h1>Welcome To</h1>
+
+        <h2>Suresh</h2>
+
+        <h3>World Of Tools</h3>
 
         <p>
-            Cloud | DevOps | Automation | CI/CD
+            Cloud • DevOps • Automation • CI/CD
             <br><br>
-            AWS • Azure • Docker • Kubernetes • Jenkins • GitHub • Terraform
+            AWS • Azure • Docker • Kubernetes
+            <br>
+            Jenkins • GitHub • Terraform
         </p>
 
         <a href="#" class="btn">Explore Tools</a>
         <a href="#" class="btn">View Projects</a>
+
     </div>
 
     <div class="hero-right">
-        <img width="500"
-        src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Devops-toolchain.svg">
+
+        <img src="/static/spartan-helmet.png" alt="Spartan Helmet">
+
     </div>
 
 </section>
@@ -220,7 +260,7 @@ body{
 </section>
 
 <div class="footer">
-    © 2026 Suresh World Of Tools | DevOps Demo Project
+    © 2026 Suresh World Of Tools | Built with Flask, Docker & Jenkins
 </div>
 
 </body>
