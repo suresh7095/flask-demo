@@ -4,27 +4,21 @@ pipeline {
     stages {
 
         stage('Checkout') {
+    steps {
+        git branch: 'main', url: 'https://github.com/suresh7095/flask-demo.git'
+    }
+}
+
+        stage('Build') {
             steps {
-                git 'https://github.com/youruser/flask-demo.git'
+                bat 'docker build -t flask-demo:latest .'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Test') {
             steps {
-                bat '''
-                wsl docker build -t flask-demo:latest .
-                '''
+                bat 'docker ps'
             }
         }
-
-        stage('Deploy') {
-            steps {
-                bat '''
-                wsl docker rm -f flaskapp || true
-                wsl docker run -d -p 5000:5000 --name flaskapp flask-demo:latest
-                '''
-            }
-        }
-
     }
 }
